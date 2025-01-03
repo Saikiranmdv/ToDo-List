@@ -3,7 +3,7 @@ import "./Tag.css"
 
 const Tag = ({tagName, selectTag, selected}) => {
   const tagStyle = {
-    HTML: {backgroundColor: "#fda821"},
+    HTML: {backgroundColor: "#fda821",},
     CSS: {backgroundColor: "rgb(85, 194, 34)"},
     JavaScript: {backgroundColor: "#ffd12c"},
     React: {backgroundColor: "#4cdafc"} ,   

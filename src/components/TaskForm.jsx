@@ -29,8 +29,6 @@ const TaskForm = ({ setTasks }) => {
     }
   }
 
-console.log(TaskData.tags)
-
   const handleChange = (e) => {
     const { name , value } = e.target
     setTaskData(prev => {
@@ -40,6 +38,9 @@ console.log(TaskData.tags)
 
   const handleSubmit = (e) =>{
     e.preventDefault();
+    setTasks(prev => {
+      return [...prev, TaskData]
+    })
   }
   // const [Task, setTask] = useState("");
   // const [Status, setStatus] = useState("todo")
