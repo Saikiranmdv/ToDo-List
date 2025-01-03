@@ -1,9 +1,19 @@
 import React from 'react'
 import "./Tag.css"
 
-const Tag = (props) => {
+const Tag = ({tagName, selectTag, selected}) => {
+  const tagStyle = {
+    HTML: {backgroundColor: "#fda821"},
+    CSS: {backgroundColor: "rgb(85, 194, 34)"},
+    JavaScript: {backgroundColor: "#ffd12c"},
+    React: {backgroundColor: "#4cdafc"} ,   
+    default: {backgroundColor: "#f9f9f9"}    
+  }
   return(
-    <button className="tag">{props.tagName}</button>
+    <button type='button'
+     style={selected ? tagStyle[tagName]: tagStyle.default}
+     className="tag" 
+     onClick={() => selectTag(tagName)}>{tagName}</button>
   )
 }
 
