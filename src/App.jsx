@@ -9,14 +9,17 @@ import { useState } from 'react'
 
 const App = () => {
   const [Tasks, setTasks] = useState([])
-  console.log("tasks", Tasks)
+  const handleDelete =(taskIndex)=>{
+    const newTasks = Tasks.filter((task, index)=>index !== taskIndex)
+    setTasks(newTasks)
+  }
   return(
     <div className='app'>
       <TaskForm setTasks={setTasks}/>
       <main className='app_main'>
-        <TaskColumn title="Things to do" icon={todoIcon} tasks={Tasks} status="todo"/> 
-        <TaskColumn title="On Going" icon={doingIcon} tasks={Tasks} status="doing"/>
-        <TaskColumn title="Done" icon={doneIcon} tasks={Tasks} status="done"/>
+        <TaskColumn title="Things to do" icon={todoIcon} tasks={Tasks} status="todo" handleDelete={handleDelete}/> 
+        <TaskColumn title="On Going" icon={doingIcon} tasks={Tasks} status="doing" handleDelete={handleDelete}/>
+        <TaskColumn title="Done" icon={doneIcon} tasks={Tasks} status="done" handleDelete={handleDelete}/>
       </main>
     </div>
   )
