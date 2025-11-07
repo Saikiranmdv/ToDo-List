@@ -1,6 +1,7 @@
 {
   "name": "todo-list",
   "private": true,
+  "homepage": "https://saikiranmdv.github.io/ToDo-List/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
